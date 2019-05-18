@@ -1,0 +1,89 @@
+<section class="hero">
+    <div class="hero-body has-text-centered">
+        <form [formGroup]="form" style="padding-left:10%;">
+            <div id="formContent">
+             
+      <form [formGroup]="uploadForm">
+        <div class="columns">
+          <div class="column"></div>
+        
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Brand</label>
+              <div class="control">
+                <input class="input" type="text"  placeholder="BrandName" formControlName="brandname" >
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <!-- <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Brand Image</label>
+              <input type="file" name="file" id="fileToUpload" formControlName="file1" (change)="fileEvent($event)">
+            </div>
+          </div> -->
+          <div class="column is-3">
+              <div class="field">
+                <label class="label is-pulled-left">Brandcategory</label>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                  <div class="control">
+                    <input type="file" name="file" id="fileToUpload" formControlName="file1" (change)="fileEvent($event)">
+                  </div>
+                </div>
+                <div class="col-sm-4"></div>
+                    
+              </div>
+            </div>
+
+
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Brandcategory</label>
+              <div class="">
+                      <select (change)="onChangeEvent($event)" formControlName="category"  name="selectedObject">
+                          <option value="" disabled selected>Select a Category</option>
+                        
+                          <option *ngFor="let category of categories" value={{category._id}}>{{category.name}}</option>
+                      </select>
+                   
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <!--<label class="label is-pulled-left">Password:</label>
+              <div class="control">
+                <input class="input" type="password" formControlName="password" name="password">
+              </div>-->
+  
+              <br>
+              <br>
+              <input type="button" (click)='add()' value="ADD">
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+      </form>
+      </div>
+      </form>
+    </div>
+  </section>
+  

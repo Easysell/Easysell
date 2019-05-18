@@ -1,0 +1,84 @@
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="" style="padding-left:10%; max-height: 250px">
+    <div class="">
+      <div id="formContent"> 
+        <!-- Tabs Titles -->
+    
+        <!-- Icon -->
+        <div class=''>
+          <img src='../../assets/img/usericon.png' style="height: 60px;width: 60px;padding: 10px " alt="User Icon" />
+        </div>
+    
+        <!-- Login Form -->
+        <form [formGroup]="form">
+          <input type="text" formControlName="name" name="name" placeholder="Username">
+          <input type="text" formControlName="email" name="email" placeholder="Email id">
+          <input type="password" formControlName="password" name="email"  placeholder="password">
+          <input type="button" (click)='register()' value="Register">
+        </form>
+    
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+          <a class="underlineHover" routerLink='/login'>Already Registered</a>
+        </div>
+    
+      </div>
+    </div>
+    </div>
+  
+    <!-- <section class="hero">
+        <div class="hero-body has-text-centered">
+          <form [formGroup]="form">
+            <div class="columns">
+              <div class="column"></div>
+      
+              <div class="column is-3">
+                <div class="field">
+                  <label class="label is-pulled-left">Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Name" formControlName="name" name="name">
+                  </div>
+                </div>
+              </div>
+      
+              <div class="column"></div>
+            </div>
+    
+            <div class="columns">
+                <div class="column"></div>
+        
+                <div class="column is-3">
+                  <div class="field">
+                    <label class="label is-pulled-left">EmailID</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="EmailID"  formControlName="email" name="email">
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="column"></div>
+              </div>
+      
+            <div class="columns">
+              <div class="column"></div>
+      
+              <div class="column is-3">
+                <div class="field">
+                  <label class="label is-pulled-left">Password</label>
+                  <div class="control">
+                    <input class="input" type="password" placeholder="Password" formControlName="password" name="password">
+                  </div>
+      
+                  <br>
+                  <br>
+                  <a class="button is-primary is-medium is-fullwidth" (click)='register()'>Register</a>
+                </div>
+              </div>
+      
+              <div class="column"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+       -->

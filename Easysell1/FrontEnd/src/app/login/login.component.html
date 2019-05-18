@@ -1,0 +1,20 @@
+
+      <form [formGroup]="form" style="padding-left:10%;">
+    <div id="formContent">
+      <div class="">
+        <img src='../../assets/img/usericon.png' style="height: 60px;width: 60px;padding: 10px " alt="User Icon" />
+      </div>
+        <input type="text" id="login" name="email" formControlName="email" placeholder="Username">
+        <input type="password" id="password" name="password" formControlName="password" placeholder="password">
+        <input type="button" (click)='login()' value="LogIn">
+      <div id="formFooter">
+        <div class="col-sm-6" >
+            <a class="underlineHover" style="margin-bottom:10px" routerLink='/register'>Create an account</a>
+        </div>
+        <div class="col-sm-6">
+            <a class="underlineHover">Forgot Password</a>
+          </div>
+      </div>
+  
+    </div>
+    </form>

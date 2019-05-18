@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <td>Category Name</td>
+      <td>Category Image</td>
+      <td>Category status</td>
+      
+    
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let categories of categories;let idx = index">
+          <td id={{idx}}>{{ categories.name }}</td>
+          <td id={{idx}}><img [src]='categories.filename'  height="30px" width="30px"></td>
+          <td id={{idx}}>{{ categories.status }}</td>
+          <td id={{idx}}> <input type="button" (click)='addCategory()'   value="EDIT"></td>
+          <td id={{idx}}><input type="button" id={{idx}} (click)="onClick($event)" value="REMOVE" /></td>
+      </tr>
+  </tbody>
+</table>

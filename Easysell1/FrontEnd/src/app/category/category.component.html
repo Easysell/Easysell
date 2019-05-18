@@ -1,0 +1,70 @@
+<form [formGroup]="form" style="padding-left:10%;">
+    <div id="formContent">
+      <div class="">
+        <img src='../../assets/img/usericon.png' style="height: 60px;width: 60px;padding: 10px " alt="User Icon" />
+      </div>
+      <form [formGroup]="uploadForm">
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <!--<label class="label is-pulled-left">Category</label>-->
+              <div class="control">
+                  <input class="input" type="text"  placeholder="Category" formControlName="catetoryname" >
+                </div>
+              </div>
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <div class="control">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                   <br> <input type="file" name="file" id="fileToUpload"  formControlName="file1" (change)="fileEvent($event)">
+                </div>
+                <div class="col-sm-4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <!--<label class="label is-pulled-left">Categorystatus</label>-->
+              <div class="control">
+               <br><input class="input" type="text" placeholder="Categorystatus" formControlName="catetorystatus" >
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <!--<label class="label is-pulled-left">Password:</label>
+              <div class="control">
+                <input class="input" type="password" formControlName="password" name="password">
+              </div>-->
+  
+              
+              <br>
+              <input type="button" (click)='addCategory()' value="ADD">
+            </div>
+          </div>
+          
+  <br>
+          <div class="column"></div>
+        </div>
+      </form>
+    

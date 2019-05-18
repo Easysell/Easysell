@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <td>Brand Name</td>
+      <td>Brand Image</td>
+      <td>Brand category </td>
+    
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let brand of brands">
+      
+            <td>{{ brand.name }}</td>
+            <td><img src="http://localhost:3000/uploads/{{ brand.filename }}" height="30px" width="30px"></td>
+            <td *ngFor= "let i of brand.output">{{ i.name }}</td>
+            <td><input type="button" value="Edit" onclick="addBrands()"/></td>
+            <td><input type="button" value="Remove" onclick="deleteRow(this)"/></td>
+            
+        </tr>
+   
+  </tbody>
+</table>
+
