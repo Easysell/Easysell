@@ -33,4 +33,49 @@ export class ApiService {
   {
     return this.http.get(this.uri + '/brand/category');
   }
+
+    adddefects(defects):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.http.post(this.uri+'',defects).subscribe(res=>{
+        resolve(res);
+      },err=>{
+        reject(err);
+      })
+      // console.log(defects);          
+    })as Promise<any>
+  }
+  
+  additem(item):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.http.post(this.uri+'',item).subscribe(res=>{
+        resolve(res);
+      },err=>{
+        reject(err);
+      })
+      // console.log(item);      
+    }) as Promise<any>
+  }
+
+  add_subdefects(subdefect):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.http.post(this.uri+'',subdefect).subscribe(res=>{
+        resolve(res);
+      },err=>{
+        reject(err);
+      })
+      // console.log(subdefect);
+    })
+  }
+
+  defects_group(defect):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.http.post(this.uri+'',defect).subscribe(res=>{
+        resolve(res);
+      },err=>{
+        reject(err);
+      })
+      // console.log(defect);
+      
+    })
+      }
 }

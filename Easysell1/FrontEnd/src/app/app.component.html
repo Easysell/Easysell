@@ -56,7 +56,7 @@
 <body >
 
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg" style="height: 200%;">
 
     <!--
 
@@ -73,7 +73,7 @@
                 </a>
             </div>
 
-            <ul class="nav">
+            <ul class="nav" style="height: 10%">
                 <li class="active">
                     <a>
                         <i class="pe-7s-graph"></i>
@@ -101,9 +101,27 @@
                 <li  *ngIf="authService.isAuthenticated&&authService.admin">
                         <a>
                             <i class="pe-7s-note2"></i>
-                            <p [routerLink]="['/brand']"  routerLinkActive="router-link-active">Brand</p>
+                            <p [routerLink]="['/brand']"  routerLinkActive="router-link-active">ADD Brand</p>
                         </a>
                     </li>
+                    <li  *ngIf="authService.isAuthenticated&&authService.admin">
+                            <a>
+                                <i class="pe-7s-note2"></i>
+                                <p [routerLink]="['/defectadding']"  routerLinkActive="router-link-active">Add Defects</p>
+                            </a>
+                        </li>
+                    <li  *ngIf="authService.isAuthenticated&&authService.admin">
+                            <a>
+                                <i class="pe-7s-note2"></i>
+                                <p [routerLink]="['/subdefects']"  routerLinkActive="router-link-active">Add Subdefects </p>
+                            </a>
+                        </li>
+                        <li  *ngIf="authService.isAuthenticated&&authService.admin">
+                                <a>
+                                    <i class="pe-7s-note2"></i>
+                                    <p [routerLink]="['/defectgrouping']"  routerLinkActive="router-link-active">Defect Grouping </p>
+                                </a>
+                            </li>
                     <li *ngIf="authService.isAuthenticated&&authService.admin">
                         <a>
                             <i class="pe-7s-note2"></i>

@@ -1,0 +1,58 @@
+
+<form class="form-horizontal" [formGroup]="form">
+    <fieldset>
+    
+    <legend style="text-align: center">ADD SUB DEFECT'S </legend>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="sub_defect"></label>  
+      <div class="col-md-6">
+      <select id="select_defect" formControlName="defectprice" name="=s_defect" 
+      class="form-control select-md" [ngClass]="{ 'is-invalid': submitted && f.defectprice.errors }" required="">
+      <option value="" hidden>SELECT DEFECT PRICE</option> 
+      <option *ngFor="let price of pricelist" value={{price}} style="color: blue">{{ price }}</option>
+      </select>
+
+       <div *ngIf="submitted && f.defectprice.errors" class="invalid-feedback">
+                  <div *ngIf="f.defectprice.errors.required">Please select an price</div>
+              </div>        
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="sub_defect"></label>  
+      <div class="col-md-6">
+      <select id="sub_defect" formControlName="subdefect" name="=sb_defect"  
+      class="form-control select-md"  [ngClass]="{ 'is-invalid': submitted && f.subdefect.errors }" required="">
+      <option value="" hidden>SUB DEFECT</option> 
+      <option *ngFor="let defect of subdefects" value={{defect}} style="color: blue">{{ defect }}</option>
+      </select>
+                    <div *ngIf="submitted && f.subdefect.errors" class="invalid-feedback">
+                  <div *ngIf="f.subdefect.errors.required">Please select an sub defect</div>
+              </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <textarea rows="5" cols="30" formControlName="defectdescription" [ngClass]="{ 'is-invalid': submitted && f.defectdescription.errors }" placeholder="description"></textarea>
+                        <div *ngIf="submitted && f.defectdescription.errors" class="invalid-feedback">
+                  <div *ngIf="f.defectdescription.errors.required">Description is required</div>
+              </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    
+    
+        <div class="form-group">
+            <div class="col-md-5"></div>
+            <div class="col-md-4">
+                <button type="button" id="target" (click)="onSubmit()" >Add</button>
+                <button id="target" (click)="save()">Cancel</button>
+            </div>
+            <div class="col-md-3"></div>
+       
+          </div>
+    <div class="text-center"></div>
+    </fieldset>
+    </form>
+    

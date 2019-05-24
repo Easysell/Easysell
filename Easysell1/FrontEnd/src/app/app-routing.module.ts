@@ -13,12 +13,16 @@ import { BrandComponent } from './brand/brand.component';
 import { BrandlistComponent } from './brandlist/brandlist.component';
 import { DefectaddingComponent } from './defectadding/defectadding.component';
 import { AdditemComponent } from './additem/additem.component';
+import { SubdefectsComponent } from './subdefects/subdefects.component';
+import { DefectgroupingComponent } from './defectgrouping/defectgrouping.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },    
     { path: 'login', component: LoginComponent },    
     { path: 'register', component: RegisterComponent },
-    { path:'add', component:AdditemComponent},
+    { path: 'subdefects', component:SubdefectsComponent,canActivate:[AuthguardGuard] },
+    { path:'add', component:AdditemComponent,canActivate:[AuthguardGuard] },
+    { path:'defectgrouping', component:DefectgroupingComponent,canActivate:[AuthguardGuard] },    
     { path: 'registervendor', component: RegistervendorComponent,canActivate:[AuthguardGuard] },
     { path: 'members', component: MembersComponent,canActivate:[AuthguardGuard]},
     { path: 'membersusers', component: MembersuserComponent,canActivate:[AuthguardGuard]},
@@ -33,6 +37,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule] 
 })
 export class AppRoutingModule { }

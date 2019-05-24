@@ -1,16 +1,13 @@
-<section class="hero">
-    <div class="hero-body has-text-centered">
-      <form [formGroup]="form">
-        <div class="columns">
-          <div class="column"></div>
-  
-          <div class="column is-3">
-            <div class="field">
-              <label class="label is-pulled-left">Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Name" formControlName="name" name="name">
-              </div>
-            </div>
+  <form [formGroup]="form" style="padding-left:10%;">
+        <div id="formContent">
+          <div class="">
+            <h4 style="font-style: italic">Add Defect</h4>
           </div>
-          
-    
+            <input type="text" id="defectname" name="name" formControlName="name" placeholder="DEFECT NAME">
+            <textarea rows="3" id="defectdescription" cols="50" formControlName="description"  placeholder="DESCRIPTION"></textarea>
+            <input type="button" (click)='add()' value="ADD"> 
+            <input type="button" (click)='cancel()' value="CANCEL">
+            
+         
+        </div>
+        </form>

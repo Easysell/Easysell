@@ -19,13 +19,8 @@ import { BrandComponent } from './brand/brand.component';
 import { BrandlistComponent } from './brandlist/brandlist.component';
 import { DefectaddingComponent } from './defectadding/defectadding.component';
 import { AdditemComponent } from './additem/additem.component';
-import { MobilesComponent } from './mobiles/mobiles.component';
-import { LaptopComponent } from './laptop/laptop.component';
-import { TabletComponent } from './tablet/tablet.component';
-import { TelevisionComponent } from './television/television.component';
-import { ImacComponent } from './imac/imac.component';
-import { BikeComponent } from './bike/bike.component';
-import { CarComponent } from './car/car.component';
+import { SubdefectsComponent } from './subdefects/subdefects.component';
+import { DefectgroupingComponent } from './defectgrouping/defectgrouping.component';
 
 
 @NgModule({
@@ -43,13 +38,8 @@ import { CarComponent } from './car/car.component';
     BrandlistComponent,
     DefectaddingComponent,
     AdditemComponent,
-    MobilesComponent,
-    LaptopComponent,
-    TabletComponent,
-    TelevisionComponent,
-    ImacComponent,
-    BikeComponent,
-    CarComponent
+    SubdefectsComponent,
+    DefectgroupingComponent
    
   ],
   imports: [

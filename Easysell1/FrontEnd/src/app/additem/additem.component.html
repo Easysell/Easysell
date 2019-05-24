@@ -1,81 +1,103 @@
 <form class="form-horizontal" [formGroup]="form">
-<fieldset>
-
-<legend style="text-align: center">ADD ITEM </legend>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_id">MODEL  NAME</label>  
-  <div class="col-md-6">
-  <input id="product_id" name="product_id" placeholder="MODEL NAME" formControlName="modelname" class="form-control input-md" required="" type="text">
+    <fieldset>
     
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_name">ITEM LOGO</label>  
-  <div class="col-md-6">
-        <input type="file" name="file" id="fileToUpload" formControlName="itemlogo" (change)="fileEvent($event)">
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_name_fr">BRAND NAME</label>  
-  <div class="col-md-6">
-  <input id="product_name_fr" name="product_name_fr" formControlName="brandname" placeholder="BRAND NAME" class="form-control input-md" required="" type="text">
+    <legend style="text-align: center">ADD ITEM </legend>
     
-  </div>
-</div>
-
-<legend style="text-align: center">SPECIFICATION DESCRIPTION</legend>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_description">RAM CATEGORY(in gb)</label>
-  <div class="col-md-6">                     
-    <input id="product_name_fr" name="product_name_fr" formControlName="ram" placeholder="ex: 2,4,6" class="form-control input-md" required="" type="text">
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_name_fr">INTENAL STORAGE(in gb)</label>
-  <div class="col-md-6">                     
-        <input id="product_name_fr" name="product_name_fr" formControlName="storage" placeholder="ex: 16,32,64" class="form-control input-md" required="" type="text">
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_id">MODEL  NAME</label>  
+      <div class="col-md-6">
+      <input id="product_id" name="product_id" placeholder="MODEL NAME" formControlName="modelname" class="form-control input-md" required="" type="text">
+        
+      </div>
     </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="percentage_discount">BACK CAMERA(in pixel)</label>  
-  <div class="col-md-6">
-  <input id="percentage_discount" name="percentage_discount" formControlName="camera" placeholder="CAMERA QUALITY" class="form-control input-md" required="" type="text">
     
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="stock_alert">BATTERY BACKUP(in mah)</label>  
-  <div class="col-md-6">
-  <input id="stock_alert" name="stock_alert" formControlName="battery" placeholder="BATTERY BACKUP" class="form-control input-md" required="" type="text">
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_name">ITEM LOGO</label>  
+      <div class="col-md-6">
+            <input type="file" name="file" id="fileToUpload" formControlName="itemlogo" (change)="fileEvent($event)">
+      </div>
+    </div>
     
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="stock_alert">PROCESSOR TYPE</label>  
-  <div class="col-md-6">
-  <input id="stock_alert" name="stock_alert" formControlName="processor" placeholder="PROCESSOR" class="form-control input-md" required="" type="text">
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_name_fr">BRAND NAME</label>  
+      <div class="col-md-6">
+          <select #brandoptions  formControlName="brandname" class="form-control" >
+              <option>Select</option>
+              <option *ngFor="let brand of brandlist" value={{brand}} style="color: blue">{{ brand }}</option>
+          </select>
+      <!-- <input id="product_name_fr" name="product_name_fr" formControlName="brandname" placeholder="BRAND NAME" class="form-control input-md" required="" type="text"> -->
+        
+      </div>
+    </div>
     
-  </div>
-</div>
+    <legend style="text-align: center">SPECIFICATION DESCRIPTION</legend>
+    
+    
+    
+    <!-- <div class="form-group">
+      <label class="col-md-4 control-label" for="stock_alert">DESCRIPTION</label>  
+      <div class="col-md-6">
+      <div id="textboxDiv" ></div>
+      <button (click)="addFields()">Add another</button>&nbsp;&nbsp;
+      <button (click)="removeFields()">Remove Field</button>
+        
+      </div>
+    </div> -->
+    
+    <div id="textboxDiv">
+    
+    </div>
+    
+    <!-- <div class="form-group">
+        <div class="col-md-5">
+          <div class="col-md-4">
+              <label class=' control-label'>specification</label>
+          </div>
+          <div class="col-md-1">
+              <input type='text' id='spec.1' autocomplete=off>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="col-md-3">
+              <label class='control-label'>description</label>
+          </div>
+          <div class="col-md-4" class="form-group" >
+              <textarea id='value.1'></textarea>&nbsp;
+          <button id='add'>+</button>&nbsp;&nbsp;<button id='remove'>-</button>
+          </div>
+        </div>
+    </div>  -->
+    
 
-<div class="form-group">
-  <div class="col-md-5"></div>
-  <div class="col-md-3">
-    <button class="btn" id="target" (click)="save()">Save details</button>
-  </div>
-  <div class="col-md-4"></div>
-  </div>
-
-
-
-</fieldset>
-</form>
-
+    <!-- <div class='form-group'>
+      <label class='col-md-2 control-label'>specification</label>
+      <div class='col-md-1'>
+        <input type='text' id='spec.1' autocomplete=off>
+      </div>
+    <label class='col-md-2 control-label'>description</label>
+      <div class='col-md-5'>
+        <textarea id='value.1'></textarea>&nbsp;&nbsp;
+        <button id='add'>+</button>&nbsp;&nbsp;<button id='remove'>-</button>
+    </div>
+  </div>-->
+    
+    <div class="form-group">
+      <div class="col-md-5"></div>
+      <div class="col-md-3">
+        <button class="btn" id="target" (click)="save()">Save details</button>
+      </div>
+      <div class="col-md-4"></div>
+      </div> 
+    
+    
+     <!-- <div class="form-group">  
+    <button (click)="addFields()">Click to add textbox</button>
+    <button (click)="removeFields()">Click to remove textbox</button>
+    <button (click)="readFields()">Save</button>
+        <div id="textboxDiv"></div>  
+     </div>  -->
+     </fieldset>
+    </form>
+    
+    
+    

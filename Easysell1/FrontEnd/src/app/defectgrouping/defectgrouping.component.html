@@ -1,0 +1,39 @@
+<form [formGroup]="form" style="padding-left:10%;">
+    <div id="formContent">
+      <div class="">
+                <img src='../../assets/img/usericon.png' style="height: 60px;width: 60px;padding: 10px " alt="User Icon" />
+      </div>
+      <div class="form-group">
+          <input type="text" id="defect" name="name" formControlName="groupname" placeholder="DEFECT GROUP NAME"><br>
+      </div>
+        
+        <br>
+
+        <div class="form-group">
+          <div class="field">
+            <label class="label is-pulled-left"></label>
+            <div class="">
+                    <select formControlName="defectname"  name="selectedObject">
+                        <option value="" disabled selected>DEFECT NAME</option>
+                      
+                        <option *ngFor="let defect of defectlist" value={{defect._id}}>{{defect.name}}</option>
+                    </select>  
+            </div>
+          </div>
+        </div>
+       
+          <div class="form-group" id="textboxDiv">
+            </div>
+            <br>
+            <div class="form-group">  
+            <button (click)='addFields()'>add</button>&nbsp;&nbsp;
+            <button (click)="removeFields()">remove</button>
+          </div>
+            <br>
+         
+          <button (click)='save()' style="margin-bottom: 20px">Save</button>
+          
+        <!-- <input type="button" (click)='cancel()' value="CANCEL"> -->
+        
+    </div>
+    </form>

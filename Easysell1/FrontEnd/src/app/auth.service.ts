@@ -9,6 +9,17 @@ export class AuthService {
   API_URL = 'http://localhost:3000';
   TOKEN_KEY = 'x-access-token';
   constructor(private http: HttpClient, private router: Router) { }
+
+   async additem(data):Promise<boolean>{
+    return new Promise((resolve,reject)=>{
+      this.http.post(this.API_URL+'/additem',data).subscribe(err=>{
+
+      },res=>{
+
+      })
+    }) as Promise<boolean>;
+  }
+
   get token() {
     return localStorage.getItem(this.TOKEN_KEY);
 }

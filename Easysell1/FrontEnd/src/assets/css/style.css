@@ -142,7 +142,7 @@ a,a:hover,a:focus {
 /*sidebar navigation*/
 #sidebar {
     width:240px;
-    height:100%;
+    /* height:100%; */
     position:fixed;
     background:#32323a;
     -webkit-transition:all .3s ease-in-out;
