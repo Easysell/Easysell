@@ -1,10 +1,10 @@
   <form [formGroup]="form" style="padding-left:10%;">
         <div id="formContent">
           <div class="">
-            <h4 style="font-style: italic">Add Defect</h4>
+            <h5 style="padding-top:10%;">Add Defect</h5>
           </div>
-            <input type="text" id="defectname" name="name" formControlName="name" placeholder="DEFECT NAME">
-            <textarea rows="3" id="defectdescription" cols="50" formControlName="description"  placeholder="DESCRIPTION"></textarea>
+            <input type="text" id="defectname" name="name" formControlName="name" placeholder="Enter defect name">
+            <textarea rows="3" id="defectdescription" cols="50" formControlName="description"  placeholder="Enter defect description"></textarea>
             <input type="button" (click)='add()' value="ADD"> 
             <input type="button" (click)='cancel()' value="CANCEL">
             

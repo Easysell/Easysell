@@ -10,17 +10,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./brand.component.css']
 })
 export class BrandComponent implements OnInit {
-  
   categories:any;
+  category_list=[];
   uploadForm: FormGroup;
    constructor(private fb: FormBuilder, private apiservice: ApiService,private httpClient:HttpClient,private router: Router) {
-    //this.createForm();
     this.uploadForm = this.fb.group({
-      brandname: [''],
-      file1: [''],
-     category:['']
+      brandname: ['',Validators.required],
+      file1: ['',Validators.required],
+     category:['',Validators.required]
     });
-    
+    this.category_list.push('mobile');
+    this.category_list.push('laptop');    
+console.log(this.categories);
+
   }
   filedata:any;
   brandname:any;
@@ -45,14 +47,17 @@ export class BrandComponent implements OnInit {
   });
   }
   addBrand() {
+    console.log(this.uploadForm.value);
+    
     let formdata = new FormData();
     console.log(this.uploadForm)
-    
-    formdata.append("name", this.uploadForm.get('brandname').value)
-    formdata.append("file",this.filedata);
-    formdata.append("categoryid", this.category);
-    this.httpClient
-    .post<any>("http://localhost:3000/brand",formdata)
+    alert(this.uploadForm.value.brandname)
+    alert(this.uploadForm.value.file1)
+    alert(this.uploadForm.value.category)
+    formdata.append("name", this.uploadForm.value.brandname)
+    formdata.append("file",this.uploadForm.value.file1);
+    formdata.append("categoryid", this.uploadForm.value.category);
+    this.httpClient.post<any>("http://localhost:3000/brand",formdata)
     .subscribe((res)=>{console.log(res);this.router.navigateByUrl('/brandlist');});
 }
 }

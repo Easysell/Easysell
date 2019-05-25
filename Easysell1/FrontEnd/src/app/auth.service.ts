@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AppComponent } from './app.component';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +10,18 @@ export class AuthService {
 
   API_URL = 'http://localhost:3000';
   TOKEN_KEY = 'x-access-token';
-  constructor(private http: HttpClient, private router: Router) { }
+  no_nav:boolean=true;
+  show_nav:boolean;
+  constructor(private http: HttpClient, private router: Router) { 
+    
+    const role=localStorage.getItem('role');
+    if(role==='admin'){
+      this.isadmin();
+    }
+    else if(role==='user'){
+      this.isuser();
+    }
+  }
 
    async additem(data):Promise<boolean>{
     return new Promise((resolve,reject)=>{
@@ -34,8 +47,20 @@ logout() {
     localStorage.removeItem("role");
     localStorage.removeItem("admin");
     localStorage.removeItem("user");
+    this.no_nav=true;
+    this.show_nav=false;
     this.router.navigateByUrl('/');
 }
+isadmin(){
+  this.no_nav=false;
+  this.show_nav=true;
+}
+
+isuser(){
+  this.no_nav=false;
+  this.show_nav=true;
+}
+
 get admin(){
     return localStorage.getItem("admin")
 }
@@ -63,11 +88,13 @@ get users(){
             localStorage.setItem("role", res.data.user.roles)
             if(res.data.user.roles=="admin")
             {
-                localStorage.setItem("admin", res.data.user.roles)
-            this.router.navigateByUrl('/members');
+              this.isadmin();
+              localStorage.setItem("admin", res.data.user.roles)
+                this.router.navigateByUrl('/members');
             }
             else
             {
+                this.isuser();
                 localStorage.setItem("user", res.data.user.roles)
                 this.router.navigateByUrl('/membersusers');
             }

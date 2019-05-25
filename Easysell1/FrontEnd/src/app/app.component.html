@@ -53,10 +53,10 @@
 	</script>
 
 </head>
-<body >
+<body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg" style="height: 200%;">
+    <div class="sidebar" *ngIf="authService.show_nav"  data-color="purple" data-image="assets/img/sidebar-5.jpg" style="height: 200%;">
 
     <!--
 
@@ -65,7 +65,7 @@
 
     -->
 
-    	<div class="sidebar-wrapper">
+    	<div class="sidebar-wrapper" id="leftcol">
             <div class="logo" style="min-height: 10%">
                 <a href="http://www.creative-tim.com" class="simple-text">
                   <img src="../assets/img/5.PNG">
@@ -205,6 +205,7 @@
     </div>
 
     <div class="main-panel">
+        <div *ngIf="authService.show_nav">
         <nav class="navbar navbar-default navbar-fixed" *ngIf="authService.isAuthenticated">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -284,14 +285,17 @@
                 </div>
             </div>
         </nav>
-
+    </div>
 
         <div class="content">
+            <div *ngIf="authService.no_nav">
+                <router-outlet></router-outlet>
+            </div>
             <div class="container-fluid">
               <div class="row">
                 <div class="col-sm-2"> </div>
-                <div class="col-sm-8">
-                 <router-outlet></router-outlet>
+                <div class="col-sm-8" *ngIf="authService.show_nav">
+                        <router-outlet></router-outlet>
                 </div>
                 <div class="col-sm-2"> </div>
               </div>

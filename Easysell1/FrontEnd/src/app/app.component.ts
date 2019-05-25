@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { AuthService } from './auth.service';
 
 
@@ -8,7 +8,9 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private authService:AuthService) { }
   title = 'example';
   loggedin:boolean;
+
+    constructor(private authService:AuthService){ }
+    ngOnInit(){ }
 }

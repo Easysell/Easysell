@@ -15,6 +15,7 @@
         <input type="text" formControlName="name" name="name" placeholder="Username">
         <input type="text" formControlName="email" name="email" placeholder="Email id">
         <input type="password" formControlName="password" name="email"  placeholder="password">
+        <p *ngIf="show">Password should be minmum 6 in length</p>
         <input type="button" (click)='register()' value="Register">
       </form>
   

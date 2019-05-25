@@ -24,9 +24,11 @@ form:FormGroup;
      alert('invalid details')
    }
    else{
-     this.serv.adddefects({x,y}).then(result=>{
+    //  console.log(this.form.value);
+     
+    //  this.serv.adddefects({x,y}).then(result=>{
 
-     })
+    //  })
    }
     console.log(this.form.value)
   }

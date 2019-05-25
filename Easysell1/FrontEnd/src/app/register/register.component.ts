@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
-
+show:boolean;
     constructor(private fb: FormBuilder,private authService: AuthService) {
         this.form = this.fb.group({
             name:['', Validators.required],
@@ -18,12 +18,20 @@ export class RegisterComponent implements OnInit {
         });
     }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
   register() {
-    console.log('Clicked the register button');
-    const val = this.form.value;
-    this.authService.register(val.name,val.email,val.password);
+   
+    if(this.form.value.password.length<=5)
+    {
+      this.show=true;
+      return;
+    }
+    else{
+      console.log('Clicked the register button');
+      const val = this.form.value;
+      this.authService.register(val.name,val.email,val.password);
+    }
 
    
 }
